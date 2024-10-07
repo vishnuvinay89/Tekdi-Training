@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics with String Manipulations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Basics and String Manipulations</h1>
+    <p id="greeting">Hello, World!</p>
+
+    <h2>Basic JavaScript Concepts</h2>
+    <script>
+        
+        var name = "John Doe";
+        const age = 25;
+        let isStudent = true;
+
+        
+        function greet() {
+            return `Hello, my name is ${name} and I am ${age} years old.`;
+        }
+
+        
+        document.getElementById('greeting').innerText = greet();
+        console.log(greet());
+    </script>
+
+    <h2>String Manipulations</h2>
+    <script>
+        const originalString = "  Hello, JavaScript!  ";
+        
+        // Trim
+        const trimmedString = originalString.trim();
+        console.log("Trimmed String:", trimmedString);
+
+        // Uppercase
+        const upperCaseString = trimmedString.toUpperCase();
+        console.log("Uppercase String:", upperCaseString);
+
+        // Lowercase
+        const lowerCaseString = trimmedString.toLowerCase();
+        console.log("Lowercase String:", lowerCaseString);
+
+        // Split
+        const splitString = trimmedString.split(" ");
+        console.log("Split String:", splitString);
+
+        // Join
+        const joinedString = splitString.join("-");
+        console.log("Joined String:", joinedString);
+
+        // Replace
+        const replacedString = trimmedString.replace("JavaScript", "World");
+        console.log("Replaced String:", replacedString);
+
+        // Substring
+        const substring = trimmedString.substring(0, 5);
+        console.log("Substring:", substring);
+
+        // Length
+        const lengthOfString = trimmedString.length;
+        console.log("Length of String:", lengthOfString);
+
+        // Concatenation
+        const concatenatedString = trimmedString + " How are you?";
+        console.log("Concatenated String:", concatenatedString);
+    </script>
+
+    <h2>DOM Manipulation</h2>
+    <button id="changeColorButton">Change Background Color</button>
+    <button id="addItemButton">Add Item to List</button>
+
+    <div class="output" id="output"></div>
+
+    <script>
+        // Change background color
+        document.getElementById('changeColorButton').addEventListener('click', function() {
+            document.body.style.backgroundColor = 
+                document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+        });
+
+        // Add item to list
+        document.getElementById('addItemButton').addEventListener('click', function() {
+            const newItem = document.createElement('div');
+            newItem.textContent = `Item ${document.getElementById('output').children.length + 1}`;
+            document.getElementById('output').appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
